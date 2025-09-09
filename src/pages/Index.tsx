@@ -1,12 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Toaster } from "@/components/ui/toaster";
+import { Header } from "@/components/Header";
+import { KanbanBoard } from "@/components/KanbanBoard";
+import { Dashboard } from "@/components/Dashboard";
+import { FiltroKanban } from "@/types";
 
 const Index = () => {
+  const [mostrarDashboard, setMostrarDashboard] = useState(false);
+  const [filtro, setFiltro] = useState<FiltroKanban>({});
+
+  const handleNovaColunaClick = () => {
+    // Implementar criação de nova coluna
+    console.log("Nova coluna clicada");
+  };
+
+  const handleNovoCardClick = (estagioId?: string) => {
+    // Implementar criação de novo card
+    console.log("Novo card clicado", estagioId);
+  };
+
+  if (mostrarDashboard) {
+    return (
+      <>
+        <Dashboard onVoltar={() => setMostrarDashboard(false)} />
+        <Toaster />
+      </>
+    );
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header
+        filtro={filtro}
+        onFiltroChange={setFiltro}
+        onNovaColunaClick={handleNovaColunaClick}
+        onNovoCardClick={() => handleNovoCardClick()}
+        onDashboardClick={() => setMostrarDashboard(true)}
+      />
+      
+      <KanbanBoard
+        filtro={filtro}
+        onAddCard={handleNovoCardClick}
+        onAddColumn={handleNovaColunaClick}
+      />
+      
+      <Toaster />
     </div>
   );
 };
