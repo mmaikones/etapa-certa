@@ -29,10 +29,12 @@ export interface Estagio {
 export interface Contato {
   id: string;
   nome: string;
+  whatsapp?: string;
   email?: string;
   telefone?: string;
   instagram?: string;
   facebook?: string;
+  linkedin?: string;
   enderecoLinha1?: string;
   enderecoLinha2?: string;
   cidade?: string;

@@ -117,8 +117,8 @@ export function KanbanColumn({
         Novo Card
       </Button>
 
-      {/* Lista de cards */}
-      <div className="flex-1 space-y-3">
+      {/* Lista de cards com espaçamento de 12px */}
+      <div className="flex-1 space-y-3">{/* space-y-3 = 12px entre cards */}
         <SortableContext 
           items={negocios.map(n => n.id)} 
           strategy={verticalListSortingStrategy}

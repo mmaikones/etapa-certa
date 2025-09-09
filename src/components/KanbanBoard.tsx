@@ -193,7 +193,7 @@ export function KanbanBoard({ filtro, onAddCard, onAddColumn }: KanbanBoardProps
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <div className="p-6">
+        <div className="p-6 bg-background">{/* Fundo branco quente #FAFAF9 */}
           <div className="flex gap-6 overflow-x-auto pb-6">
             <SortableContext 
               items={estagios.map(e => e.id)} 

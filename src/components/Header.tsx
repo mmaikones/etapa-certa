@@ -57,7 +57,7 @@ export function Header({
   const temFiltrosAtivos = !!(filtro.responsavel || (filtro.etiquetas && filtro.etiquetas.length > 0) || filtro.busca);
 
   return (
-    <header className="bg-card border-b border-border p-4 sticky top-0 z-50">
+    <header className="bg-[#F0FDF4] border-b border-border p-4 sticky top-0 z-50">
       <div className="flex items-center justify-between gap-4">
         {/* Logo e título */}
         <div className="flex items-center gap-4">
@@ -67,7 +67,7 @@ export function Header({
             onClick={onDashboardClick}
             variant="outline"
             size="sm"
-            className="animate-button-press"
+            className="animate-button-press bg-white border-[#E5E7EB] text-[#111827] rounded-[15px] hover:bg-[#FAFAF9]"
           >
             <BarChart3 className="h-4 w-4 mr-2" />
             Dashboard
@@ -83,14 +83,14 @@ export function Header({
               placeholder="Buscar por cliente, e-mail, Instagram..."
               value={buscaLocal}
               onChange={(e) => setBuscaLocal(e.target.value)}
-              className="pl-10"
+              className="pl-10 bg-[#FAFAF9] border-[#E5E7EB] rounded-[15px] focus:bg-white"
             />
           </form>
 
           {/* Filtro por responsável */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="animate-button-press">
+              <Button variant="outline" size="sm" className="animate-button-press bg-[#FAFAF9] border-[#E5E7EB] text-[#111827] rounded-[15px] hover:bg-white">
                 <User className="h-4 w-4 mr-2" />
                 Responsável
                 {filtro.responsavel && (
@@ -118,7 +118,7 @@ export function Header({
           {/* Filtro por etiquetas */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="animate-button-press">
+              <Button variant="outline" size="sm" className="animate-button-press bg-[#FAFAF9] border-[#E5E7EB] text-[#111827] rounded-[15px] hover:bg-white">
                 <Filter className="h-4 w-4 mr-2" />
                 Etiquetas
                 {filtro.etiquetas && filtro.etiquetas.length > 0 && (
@@ -168,7 +168,7 @@ export function Header({
             onClick={onNovaColunaClick}
             variant="outline"
             size="sm"
-            className="animate-button-press"
+            className="animate-button-press bg-[#FAFAF9] border-[#E5E7EB] text-[#111827] rounded-[15px] hover:bg-white"
           >
             <Plus className="h-4 w-4 mr-2" />
             Nova Coluna
@@ -177,7 +177,7 @@ export function Header({
           <Button
             onClick={onNovoCardClick}
             size="sm"
-            className="animate-button-press"
+            className="animate-button-press bg-primary text-primary-foreground rounded-[15px] hover:bg-primary/90"
           >
             <Plus className="h-4 w-4 mr-2" />
             Novo Card

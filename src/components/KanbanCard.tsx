@@ -9,7 +9,9 @@ import {
   Mail, 
   Instagram, 
   Facebook, 
-  MapPin 
+  MapPin,
+  MessageCircle,
+  Linkedin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -76,7 +78,25 @@ export function KanbanCard({
             {contato.nome}
           </p>
           
-          {/* Badges de redes sociais */}
+          {/* WhatsApp sempre primeiro - preparado para Chatwoot */}
+          {contato.whatsapp && (
+            <div className="mb-2">
+              <Badge 
+                variant="outline" 
+                className="text-xs px-2 py-1 cursor-pointer hover:bg-green-50 bg-green-50 text-green-700 border-green-200"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  // TODO: Integração futura com Chatwoot
+                  console.log('WhatsApp clicked - preparado para Chatwoot:', contato.whatsapp);
+                }}
+              >
+                <MessageCircle className="h-3 w-3 mr-1" />
+                {contato.whatsapp}
+              </Badge>
+            </div>
+          )}
+          
+          {/* Demais contatos */}
           <div className="flex flex-wrap gap-1">
             {contato.email && (
               <Badge variant="outline" className="text-xs px-1.5 py-0.5">
@@ -94,6 +114,12 @@ export function KanbanCard({
               <Badge variant="outline" className="text-xs px-1.5 py-0.5">
                 <Facebook className="h-3 w-3 mr-1" />
                 {contato.facebook}
+              </Badge>
+            )}
+            {contato.linkedin && (
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+                <Linkedin className="h-3 w-3 mr-1" />
+                LinkedIn
               </Badge>
             )}
             {contato.cidade && (

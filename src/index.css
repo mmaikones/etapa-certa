@@ -9,8 +9,11 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Base colors */
-    --background: 249 250 251; /* #F8F9FA - fundo do app */
+    --background: 250 250 249; /* #FAFAF9 - branco levemente quente */
     --foreground: 17 24 39; /* #111827 - texto primário */
+    
+    /* Header colors */
+    --header-green: 240 253 244; /* #F0FDF4 - verde pastel */
     
     /* Card colors */
     --card: 0 0% 100%; /* #FFFFFF - cards */
@@ -41,9 +44,12 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 100%;
     
     /* Border and input */
-    --border: 220 13% 91%; /* #E0E0E0 */
+    --border: 220 13% 91%; /* #E5E7EB */
     --input: 220 13% 91%;
     --ring: 219 78% 55%;
+    
+    /* Card spacing */
+    --card-spacing: 12px;
     
     /* Kanban specific colors */
     --purple: 263 70% 59%; /* #8B5CF6 - roxo */
