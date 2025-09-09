@@ -67,7 +67,7 @@ export function Header({
             onClick={onDashboardClick}
             variant="outline"
             size="sm"
-            className="control-button animate-button-press shadow-sm"
+            className="control-button animate-button-press shadow-sm font-medium"
           >
             <BarChart3 className="h-4 w-4 mr-2" />
             Dashboard
@@ -90,7 +90,7 @@ export function Header({
           {/* Filtro por responsável */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm">
+              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm font-medium">
                 <User className="h-4 w-4 mr-2" />
                 Responsável
                 {filtro.responsavel && (
@@ -118,7 +118,7 @@ export function Header({
           {/* Filtro por etiquetas */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm">
+              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm font-medium">
                 <Filter className="h-4 w-4 mr-2" />
                 Etiquetas
                 {filtro.etiquetas && filtro.etiquetas.length > 0 && (
@@ -168,7 +168,7 @@ export function Header({
             onClick={onNovaColunaClick}
             variant="outline"
             size="sm"
-            className="control-button animate-button-press shadow-sm"
+            className="control-button animate-button-press shadow-sm font-medium"
           >
             <Plus className="h-4 w-4 mr-2" />
             Nova Coluna
@@ -177,7 +177,7 @@ export function Header({
           <Button
             onClick={onNovoCardClick}
             size="sm"
-            className="animate-button-press bg-primary text-primary-foreground rounded-[10px] hover:bg-primary/90 shadow-sm"
+            className="animate-button-press bg-primary text-primary-foreground rounded-[10px] hover:bg-primary/90 shadow-sm font-medium"
           >
             <Plus className="h-4 w-4 mr-2" />
             Novo Card

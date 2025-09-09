@@ -83,7 +83,7 @@ export function KanbanCard({
             <div className="mb-2">
               <Badge 
                 variant="outline" 
-                className="text-xs px-2 py-1 cursor-pointer hover:bg-green-50 bg-green-50 text-green-700 border-green-200"
+                className="text-xs px-2 py-1 cursor-pointer hover:bg-green-50 bg-green-50 text-green-700 border-green-200 font-light"
                 onClick={(e) => {
                   e.stopPropagation();
                   // TODO: Integração futura com Chatwoot
@@ -99,31 +99,31 @@ export function KanbanCard({
           {/* Demais contatos */}
           <div className="flex flex-wrap gap-1">
             {contato.email && (
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5 font-light">
                 <Mail className="h-3 w-3 mr-1" />
                 E-mail
               </Badge>
             )}
             {contato.instagram && (
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5 font-light">
                 <Instagram className="h-3 w-3 mr-1" />
                 {contato.instagram}
               </Badge>
             )}
             {contato.facebook && (
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5 font-light">
                 <Facebook className="h-3 w-3 mr-1" />
                 {contato.facebook}
               </Badge>
             )}
             {contato.linkedin && (
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5 font-light">
                 <Linkedin className="h-3 w-3 mr-1" />
                 LinkedIn
               </Badge>
             )}
             {contato.cidade && (
-              <Badge variant="outline" className="text-xs px-1.5 py-0.5">
+              <Badge variant="outline" className="text-xs px-1.5 py-0.5 font-light">
                 <MapPin className="h-3 w-3 mr-1" />
                 {contato.cidade}/{contato.uf}
               </Badge>
@@ -139,7 +139,7 @@ export function KanbanCard({
             <Badge
               key={etiqueta.id}
               variant="outline"
-              className="text-xs px-2 py-0.5"
+              className="text-xs px-2 py-0.5 font-light"
               style={{
                 backgroundColor: `${etiqueta.corHex}15`,
                 color: etiqueta.corHex,
