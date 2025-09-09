@@ -57,17 +57,17 @@ export function Header({
   const temFiltrosAtivos = !!(filtro.responsavel || (filtro.etiquetas && filtro.etiquetas.length > 0) || filtro.busca);
 
   return (
-    <header className="bg-[hsl(var(--header-green))] border-b border-border p-4 sticky top-0 z-50">
+    <header className="bg-[hsl(var(--header-background))] border-b border-[hsl(var(--border))] p-4 sticky top-0 z-50">
       <div className="flex items-center justify-between gap-4">
         {/* Logo e título */}
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-semibold text-foreground">Kanban CRM</h1>
+          <h1 className="text-2xl font-semibold text-[hsl(var(--control-text))]">Kanban CRM</h1>
           
           <Button
             onClick={onDashboardClick}
             variant="outline"
             size="sm"
-            className="animate-button-press bg-white border-[hsl(var(--button-border))] text-[hsl(var(--button-text))] rounded-[15px] hover:bg-[hsl(var(--button-secondary))]"
+            className="control-button animate-button-press shadow-sm"
           >
             <BarChart3 className="h-4 w-4 mr-2" />
             Dashboard
@@ -83,14 +83,14 @@ export function Header({
               placeholder="Buscar por cliente, e-mail, Instagram..."
               value={buscaLocal}
               onChange={(e) => setBuscaLocal(e.target.value)}
-              className="pl-10 bg-[hsl(var(--button-secondary))] border-[hsl(var(--button-border))] rounded-[15px] focus:bg-white"
+              className="pl-10 bg-[hsl(var(--control-background))] border-[hsl(var(--control-border))] text-[hsl(var(--control-text))] rounded-[15px] focus:bg-[hsl(var(--surface))] focus:ring-2 focus:ring-[hsl(var(--focus-ring))] focus:ring-offset-2"
             />
           </form>
 
           {/* Filtro por responsável */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="animate-button-press bg-[hsl(var(--button-secondary))] border-[hsl(var(--button-border))] text-[hsl(var(--button-text))] rounded-[15px] hover:bg-white">
+              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm">
                 <User className="h-4 w-4 mr-2" />
                 Responsável
                 {filtro.responsavel && (
@@ -118,7 +118,7 @@ export function Header({
           {/* Filtro por etiquetas */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="animate-button-press bg-[hsl(var(--button-secondary))] border-[hsl(var(--button-border))] text-[hsl(var(--button-text))] rounded-[15px] hover:bg-white">
+              <Button variant="outline" size="sm" className="control-button animate-button-press shadow-sm">
                 <Filter className="h-4 w-4 mr-2" />
                 Etiquetas
                 {filtro.etiquetas && filtro.etiquetas.length > 0 && (
@@ -168,7 +168,7 @@ export function Header({
             onClick={onNovaColunaClick}
             variant="outline"
             size="sm"
-            className="animate-button-press bg-[hsl(var(--button-secondary))] border-[hsl(var(--button-border))] text-[hsl(var(--button-text))] rounded-[15px] hover:bg-white"
+            className="control-button animate-button-press shadow-sm"
           >
             <Plus className="h-4 w-4 mr-2" />
             Nova Coluna
@@ -177,7 +177,7 @@ export function Header({
           <Button
             onClick={onNovoCardClick}
             size="sm"
-            className="animate-button-press bg-primary text-primary-foreground rounded-[15px] hover:bg-primary/90"
+            className="animate-button-press bg-primary text-primary-foreground rounded-[15px] hover:bg-primary/90 shadow-sm"
           >
             <Plus className="h-4 w-4 mr-2" />
             Novo Card

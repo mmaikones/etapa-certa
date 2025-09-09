@@ -8,24 +8,30 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 250 250 249; /* #FAFAF9 - branco levemente quente */
+    /* App backgrounds */
+    --background: 249 250 251; /* #F9FAFB - fundo geral do app */
     --foreground: 17 24 39; /* #111827 - texto primário */
     
     /* Header colors */
-    --header-green: 240 253 244; /* #F0FDF4 - verde pastel */
+    --header-background: 240 253 244; /* #F0FDF4 - verde pastel */
     
-    /* Button colors */
-    --button-secondary: 250 250 249; /* #FAFAF9 - fundo botões */
-    --button-border: 229 231 235; /* #E5E7EB - borda botões */
-    --button-text: 17 24 39; /* #111827 - texto botões */
+    /* Control colors */
+    --control-background: 249 250 251; /* #F9FAFB - fundo controles */
+    --control-border: 229 231 235; /* #E5E7EB - borda controles */
+    --control-text: 17 24 39; /* #111827 - texto controles */
+    --control-hover: 243 244 246; /* #F3F4F6 - hover controles */
+    --control-active: 229 231 235; /* #E5E7EB - active controles */
+    
+    /* Surface colors */
+    --surface: 255 255 255; /* #FFFFFF - cards e colunas */
+    --focus-ring: 167 243 208; /* #A7F3D0 - focus ring */
     
     /* Card colors */
-    --card: 0 0% 100%; /* #FFFFFF - cards */
+    --card: 255 255 255; /* #FFFFFF - cards */
     --card-foreground: 17 24 39;
     
     /* Popover colors */
-    --popover: 0 0% 100%;
+    --popover: 255 255 255;
     --popover-foreground: 17 24 39;
     
     /* Primary colors (azul principal) */
@@ -34,32 +40,32 @@ All colors MUST be HSL.
     
     /* Secondary colors */
     --secondary: 107 64% 42%; /* #10B981 - verde */
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 255 255 255;
     
     /* Muted colors */
-    --muted: 220 13% 91%; /* #E0E0E0 - bordas */
-    --muted-foreground: 107 14% 45%; /* #6B7280 - texto secundário */
+    --muted: 243 244 246; /* #F3F4F6 - áreas suaves */
+    --muted-foreground: 107 114 128; /* #6B7280 - texto secundário */
     
     /* Accent colors */
-    --accent: 45 93% 47%; /* #F59E0B - amarelo */
-    --accent-foreground: 0 0% 100%;
+    --accent: 147 197 253; /* #93C5FD - azul suave */
+    --accent-foreground: 17 24 39;
     
     /* Destructive colors */
-    --destructive: 0 84% 60%; /* #EF4444 - vermelho */
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 252 165 165; /* #FCA5A5 - vermelho claro */
+    --destructive-foreground: 17 24 39;
     
     /* Border and input */
-    --border: 220 13% 91%; /* #E5E7EB */
-    --input: 220 13% 91%;
-    --ring: 219 78% 55%;
+    --border: 229 231 235; /* #E5E7EB */
+    --input: 229 231 235;
+    --ring: 167 243 208; /* #A7F3D0 - focus ring */
     
     /* Card spacing */
     --card-spacing: 12px;
     
-    /* Kanban specific colors */
-    --purple: 263 70% 59%; /* #8B5CF6 - roxo */
-    --pink: 330 81% 60%; /* #EC4899 - rosa */
-    --cyan: 188 94% 37%; /* #06B6D4 - ciano */
+    /* Dashboard specific colors */
+    --chart-open: 147 197 253; /* #93C5FD - azul suave */
+    --chart-won: 134 239 172; /* #86EFAC - verde suave */
+    --chart-lost: 252 165 165; /* #FCA5A5 - vermelho claro */
     
     /* Shadow levels */
     --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -80,33 +86,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 17 24 39;
-    --foreground: 249 250 251;
+    --background: 249 250 251;
+    --foreground: 17 24 39;
     
-    --card: 31 41 55;
-    --card-foreground: 249 250 251;
+    --card: 255 255 255;
+    --card-foreground: 17 24 39;
     
-    --popover: 31 41 55;
-    --popover-foreground: 249 250 251;
+    --popover: 255 255 255;
+    --popover-foreground: 17 24 39;
     
     --primary: 219 78% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 255 255 255;
     
     --secondary: 107 64% 42%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 255 255 255;
     
-    --muted: 75 85% 15%;
-    --muted-foreground: 156 163% 75%;
+    --muted: 243 244 246;
+    --muted-foreground: 107 114 128;
     
-    --accent: 45 93% 47%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 147 197 253;
+    --accent-foreground: 17 24 39;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 252 165 165;
+    --destructive-foreground: 17 24 39;
     
-    --border: 75 85% 15%;
-    --input: 75 85% 15%;
-    --ring: 219 78% 55%;
+    --border: 229 231 235;
+    --input: 229 231 235;
+    --ring: 167 243 208;
     
     --sidebar-background: 17 24 39;
     --sidebar-foreground: 156 163% 75%;
@@ -137,42 +143,30 @@ All colors MUST be HSL.
   }
 }
 
-/* Kanban specific styles */
+/* Component specific styles */
 @layer components {
   .kanban-card {
-    @apply bg-card border border-border rounded-[15px] p-4 shadow-[--shadow-card] transition-all duration-200 ease-out hover:shadow-[--shadow-card-hover] hover:scale-[1.02];
+    @apply bg-[hsl(var(--surface))] border border-[hsl(var(--border))] rounded-[15px] p-4 shadow-sm transition-all duration-200 ease-out hover:shadow-md hover:scale-[1.02];
   }
   
   .kanban-column {
-    @apply bg-card border border-border rounded-[15px] p-4 min-h-[600px] w-80;
+    @apply bg-[hsl(var(--surface))] border border-[hsl(var(--border))] rounded-[15px] p-4 min-h-[600px] w-80;
   }
   
-  .tag-blue {
-    @apply bg-primary/10 text-primary border-primary/20;
+  .control-button {
+    @apply bg-[hsl(var(--control-background))] border border-[hsl(var(--control-border))] text-[hsl(var(--control-text))] rounded-[15px] transition-all duration-200;
   }
   
-  .tag-green {
-    @apply bg-secondary/10 text-secondary border-secondary/20;
+  .control-button:hover {
+    @apply bg-[hsl(var(--control-hover))] text-[hsl(var(--control-text))] border-[hsl(var(--control-border))];
   }
   
-  .tag-yellow {
-    @apply bg-accent/10 text-accent border-accent/20;
+  .control-button:active {
+    @apply bg-[hsl(var(--control-active))] text-[hsl(var(--control-text))];
   }
   
-  .tag-purple {
-    @apply bg-[hsl(var(--purple))]/10 text-[hsl(var(--purple))] border-[hsl(var(--purple))]/20;
-  }
-  
-  .tag-pink {
-    @apply bg-[hsl(var(--pink))]/10 text-[hsl(var(--pink))] border-[hsl(var(--pink))]/20;
-  }
-  
-  .tag-red {
-    @apply bg-destructive/10 text-destructive border-destructive/20;
-  }
-  
-  .tag-cyan {
-    @apply bg-[hsl(var(--cyan))]/10 text-[hsl(var(--cyan))] border-[hsl(var(--cyan))]/20;
+  .control-button:focus {
+    @apply ring-2 ring-[hsl(var(--focus-ring))] ring-offset-2;
   }
 }
 
