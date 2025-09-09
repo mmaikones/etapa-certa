@@ -29,7 +29,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[hsl(var(--background))]">
       <Header
         filtro={filtro}
         onFiltroChange={setFiltro}

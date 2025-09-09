@@ -38,22 +38,22 @@ export function Dashboard({ onVoltar }: DashboardProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAF9]">
+    <div className="min-h-screen bg-[hsl(var(--background))]">
       {/* Header com fundo verde */}
-      <div className="bg-[#F0FDF4] border-b border-[#E5E7EB] p-6">
+      <div className="bg-[hsl(var(--header-green))] border-b border-[hsl(var(--button-border))] p-6">
         <div className="flex items-center gap-4">
-          <Button onClick={onVoltar} variant="outline" size="sm" className="bg-white border-[#E5E7EB] text-[#111827] rounded-[15px] hover:bg-[#FAFAF9]">
+          <Button onClick={onVoltar} variant="outline" size="sm" className="bg-white border-[hsl(var(--button-border))] text-[hsl(var(--button-text))] rounded-[15px] hover:bg-[hsl(var(--button-secondary))]">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar ao Kanban
           </Button>
-          <h1 className="text-2xl font-semibold text-[#111827]">Dashboard</h1>
+          <h1 className="text-2xl font-semibold text-[hsl(var(--button-text))]">Dashboard</h1>
         </div>
       </div>
       
       <div className="p-6 space-y-6">
         {/* Cards de resumo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="bg-white border-[#E5E7EB] shadow-sm">
+          <Card className="bg-white border-[hsl(var(--button-border))] shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Negócios Abertos</CardTitle>
               <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -64,7 +64,7 @@ export function Dashboard({ onVoltar }: DashboardProps) {
             </CardContent>
           </Card>
 
-          <Card className="bg-white border-[#E5E7EB] shadow-sm">
+          <Card className="bg-white border-[hsl(var(--button-border))] shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Negócios Ganhos</CardTitle>
               <TrendingUp className="h-4 w-4 text-[#34D399]" />
@@ -75,7 +75,7 @@ export function Dashboard({ onVoltar }: DashboardProps) {
             </CardContent>
           </Card>
 
-          <Card className="bg-white border-[#E5E7EB] shadow-sm">
+          <Card className="bg-white border-[hsl(var(--button-border))] shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Negócios Perdidos</CardTitle>
               <TrendingDown className="h-4 w-4 text-destructive" />
@@ -90,15 +90,15 @@ export function Dashboard({ onVoltar }: DashboardProps) {
         {/* Gráficos */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Gráfico de barras por estágio */}
-          <Card className="bg-white border-[#E5E7EB] shadow-sm">
-            <CardHeader className="bg-[#F3F4F6] rounded-t-lg border-b border-[#E5E7EB]">
+          <Card className="bg-white border-[hsl(var(--button-border))] shadow-sm">
+            <CardHeader className="bg-[#F3F4F6] rounded-t-lg border-b border-[hsl(var(--button-border))]">
               <CardTitle>Valor por Estágio</CardTitle>
               <CardDescription>Distribuição de valores nos estágios do pipeline</CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={dadosPorEstagio}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--button-border))" />
                   <XAxis dataKey="estagio" />
                   <YAxis tickFormatter={(value) => `R$ ${(value / 1000).toFixed(0)}k`} />
                   <Tooltip formatter={(value) => formatarMoeda(Number(value))} />
@@ -109,8 +109,8 @@ export function Dashboard({ onVoltar }: DashboardProps) {
           </Card>
 
           {/* Gráfico pizza */}
-          <Card className="bg-white border-[#E5E7EB] shadow-sm">
-            <CardHeader className="bg-[#F3F4F6] rounded-t-lg border-b border-[#E5E7EB]">
+          <Card className="bg-white border-[hsl(var(--button-border))] shadow-sm">
+            <CardHeader className="bg-[#F3F4F6] rounded-t-lg border-b border-[hsl(var(--button-border))]">
               <CardTitle>Distribuição por Status</CardTitle>
               <CardDescription>Valores totais por status dos negócios</CardDescription>
             </CardHeader>
