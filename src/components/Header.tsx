@@ -61,7 +61,7 @@ export function Header({
       <div className="flex items-center justify-between gap-4">
         {/* Logo e título */}
         <div className="flex items-center gap-4">
-          <h1 className="text-2xl font-semibold text-[hsl(var(--control-text))]">Kanban CRM</h1>
+          <h1 className="text-2xl font-normal text-[hsl(var(--control-text))]">Kanban CRM</h1>
           
           <Button
             onClick={onDashboardClick}
@@ -83,7 +83,7 @@ export function Header({
               placeholder="Buscar por cliente, e-mail, Instagram..."
               value={buscaLocal}
               onChange={(e) => setBuscaLocal(e.target.value)}
-              className="pl-10 bg-[hsl(var(--control-background))] border-[hsl(var(--control-border))] text-[hsl(var(--control-text))] rounded-[15px] focus:bg-[hsl(var(--surface))] focus:ring-2 focus:ring-[hsl(var(--focus-ring))] focus:ring-offset-2"
+              className="pl-10 bg-[hsl(var(--control-background))] border-[hsl(var(--control-border))] text-[hsl(var(--control-text))] rounded-[10px] focus:bg-[hsl(var(--surface))] focus:ring-2 focus:ring-[hsl(var(--focus-ring))] focus:ring-offset-2"
             />
           </form>
 
@@ -177,7 +177,7 @@ export function Header({
           <Button
             onClick={onNovoCardClick}
             size="sm"
-            className="animate-button-press bg-primary text-primary-foreground rounded-[15px] hover:bg-primary/90 shadow-sm"
+            className="animate-button-press bg-primary text-primary-foreground rounded-[10px] hover:bg-primary/90 shadow-sm"
           >
             <Plus className="h-4 w-4 mr-2" />
             Novo Card

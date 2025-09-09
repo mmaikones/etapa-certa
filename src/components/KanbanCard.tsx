@@ -61,11 +61,11 @@ export function KanbanCard({
     >
       {/* Header do card com título e valor */}
       <div className="flex items-start justify-between mb-3">
-        <h3 className="font-medium text-sm text-foreground leading-tight flex-1 mr-2">
+        <h3 className="font-light text-sm text-foreground leading-tight flex-1 mr-2">
           {negocio.titulo}
         </h3>
         <div className="text-right">
-          <p className="font-semibold text-sm text-foreground">
+          <p className="font-light text-sm text-foreground">
             {formatarMoeda(negocio.valor)}
           </p>
         </div>
@@ -74,7 +74,7 @@ export function KanbanCard({
       {/* Informações do contato */}
       {contato && (
         <div className="mb-3">
-          <p className="font-medium text-xs text-muted-foreground mb-1">
+          <p className="font-light text-xs text-muted-foreground mb-1">
             {contato.nome}
           </p>
           

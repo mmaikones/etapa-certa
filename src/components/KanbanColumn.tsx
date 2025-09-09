@@ -60,7 +60,7 @@ export function KanbanColumn({
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-border/30">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-semibold text-base text-foreground">
+            <h3 className="font-medium text-base text-foreground">
               {estagio.nome}
             </h3>
             <Badge variant="secondary" className="text-xs">
@@ -68,7 +68,7 @@ export function KanbanColumn({
             </Badge>
           </div>
           
-          <p className="text-sm font-medium text-muted-foreground">
+          <p className="text-sm font-light text-muted-foreground">
             {formatarMoeda(valorTotal)}
           </p>
         </div>
