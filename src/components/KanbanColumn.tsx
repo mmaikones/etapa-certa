@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Plus, MoreHorizontal, Edit3, Trash2, Palette } from "lucide-react";
+import { API } from "@/lib/api";
 import { useDroppable } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { Button } from "@/components/ui/button";
@@ -25,6 +26,7 @@ interface KanbanColumnProps {
   onEditColumnClick: (estagio: Estagio) => void;
   onDeleteColumnClick: (estagio: Estagio) => void;
   onChangeColumnColor: (estagio: Estagio) => void;
+  onBoardRefresh: () => void;
 }
 
 export function KanbanColumn({
@@ -36,8 +38,28 @@ export function KanbanColumn({
   onEditColumnClick,
   onDeleteColumnClick,
   onChangeColumnColor,
+  onBoardRefresh,
 }: KanbanColumnProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [creating, setCreating] = useState(false);
+
+  async function handleCreateCard() {
+    try {
+      const titulo = window.prompt('Título do card:')?.trim();
+      if (!titulo) return;
+      const valorStr = window.prompt('Valor (opcional):') || '0';
+      const valor = Number(valorStr) || 0;
+      setCreating(true);
+      await API.createCard({ pipeline_id: estagio.id, titulo, valor });
+      onBoardRefresh();
+      alert('Card criado ✅');
+    } catch (e: any) {
+      console.error(e);
+      alert(`Erro ao criar card: ${e?.message || 'falha'}`);
+    } finally {
+      setCreating(false);
+    }
+  }
 
   const { setNodeRef } = useDroppable({
     id: estagio.id,
@@ -111,10 +133,11 @@ export function KanbanColumn({
       <Button
         variant="outline"
         className="mb-4 animate-button-press border-dashed"
-        onClick={() => onAddCardClick(estagio.id)}
+        onClick={handleCreateCard}
+        disabled={creating}
       >
         <Plus className="h-4 w-4 mr-2" />
-        Novo Card
+        {creating ? 'Criando…' : 'Novo Card'}
       </Button>
 
       {/* Lista de cards com espaçamento de 12px */}

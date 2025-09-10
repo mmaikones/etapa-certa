@@ -15,6 +15,7 @@ import { CardEditDrawer } from "./CardEditDrawer";
 import { Estagio, Negocio, FiltroKanban } from "@/types";
 import { negociosMock, estagiosMock } from "@/lib/mockData";
 import { useToast } from "@/hooks/use-toast";
+import { API } from "@/lib/api";
 
 interface KanbanBoardProps {
   filtro: FiltroKanban;
@@ -29,6 +30,25 @@ export function KanbanBoard({ filtro, onAddCard, onAddColumn }: KanbanBoardProps
   const [drawerAberto, setDrawerAberto] = useState(false);
 
   const { toast } = useToast();
+
+  const handleBoardRefresh = async () => {
+    try {
+      const data = await API.getBoard();
+      if (data.columns) {
+        setEstagios(data.columns);
+      }
+      if (data.negocios) {
+        setNegocios(data.negocios);
+      }
+    } catch (e: any) {
+      console.error('Erro ao recarregar board:', e);
+      toast({
+        title: "Erro ao recarregar board",
+        description: e?.message || 'Falha na comunicação',
+        variant: "destructive"
+      });
+    }
+  };
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -212,6 +232,7 @@ export function KanbanBoard({ filtro, onAddCard, onAddColumn }: KanbanBoardProps
                     onEditColumnClick={handleEditColumn}
                     onDeleteColumnClick={handleDeleteColumn}
                     onChangeColumnColor={handleChangeColumnColor}
+                    onBoardRefresh={handleBoardRefresh}
                   />
                 ))}
             </SortableContext>
