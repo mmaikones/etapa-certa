@@ -164,6 +164,10 @@ export function Header({
 
         {/* Ações */}
         <div className="flex items-center gap-2">
+          <a href="/setup" className="text-sm text-gray-700 hover:underline font-medium">
+            Configuração
+          </a>
+          
           <Button
             onClick={onNovaColunaClick}
             variant="outline"
